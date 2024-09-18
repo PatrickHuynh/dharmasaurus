@@ -24,10 +24,6 @@
 	import supabaseDb from '$lib/supabaseClient';
 	import SideBarMenu from './sideBarMenu.svelte';
 	const user = supabaseDb.user;
-	const logout = async () => {
-		await supabaseDb.signOut();
-		goto('/');
-	};
 </script>
 
 <Drawer>
