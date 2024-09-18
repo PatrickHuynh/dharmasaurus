@@ -25,6 +25,12 @@
 		<div>
 			<button on:click={sideBarMenuClose}> <a href="/definitions">Definitions</a></button>
 		</div>
+		<div>
+			<button on:click={sideBarMenuClose}> <a href="/subjects">Subjects</a></button>
+		</div>
+		<div>
+			<button on:click={sideBarMenuClose}> <a href="/ethics">Ethics</a></button>
+		</div>
 	</div>
 	<div class="mx-auto">Thanks!</div>
 	<!-- <nav class="flex flex-col justify-start">

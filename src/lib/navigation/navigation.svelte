@@ -18,18 +18,14 @@
 		sideBarMenuDrawer.open(drawerSettings);
 	};
 
-	const sideBarClose = () => {
-		sideBarMenuDrawer.close();
-	};
-
 	import dharmasaurusLogo from '$lib/imgs/dharmasaurus_small.png';
 
 	// backend
-	import db from '$lib/supabaseClient';
+	import supabaseDb from '$lib/supabaseClient';
 	import SideBarMenu from './sideBarMenu.svelte';
-	const user = db.user;
+	const user = supabaseDb.user;
 	const logout = async () => {
-		await db.signOut();
+		await supabaseDb.signOut();
 		goto('/');
 	};
 </script>
@@ -55,11 +51,7 @@
 		</a>
 		<div>
 			{#if $user}
-				<button
-					type="button"
-					class="btn variant-filled-surface m-0 px-3 py-1 rounded"
-					on:click={logout}>Sign out</button
-				>
+				<a href="/user" class="btn variant-filled-surface m-0 px-3 py-1 rounded">Profile</a>
 			{:else}
 				<a href="/user/login" class="btn variant-filled-surface m-0 px-3 py-1 rounded">Login</a>
 			{/if}
